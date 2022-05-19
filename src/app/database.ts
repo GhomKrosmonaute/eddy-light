@@ -1,10 +1,4 @@
 import knex from "knex"
-import path from "path"
-import fs from "fs"
-
-const dataDirectory = path.join(process.cwd(), "data")
-
-if (!fs.existsSync(dataDirectory)) fs.mkdirSync(dataDirectory)
 
 /**
  * Welcome to the database file!
@@ -12,9 +6,13 @@ if (!fs.existsSync(dataDirectory)) fs.mkdirSync(dataDirectory)
  */
 
 export const db = knex({
-  client: "sqlite3",
+  client: "pg",
   useNullAsDefault: true,
   connection: {
-    filename: path.join(dataDirectory, "sqlite3.db"),
+    port: +(process.env.DB_PORT ?? 5432),
+    host: process.env.DB_HOST ?? "localhost",
+    user: process.env.DB_USER ?? "postgres",
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE ?? "postgres",
   },
 })
