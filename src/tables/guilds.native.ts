@@ -9,7 +9,7 @@ export default new app.Table<Guild>({
   name: "guilds",
   description: "Represent a guild",
   setup: (table) => {
-    table.string("id").unique()
+    table.string("id").unique().notNullable()
     table.string("prefix").nullable()
   },
 })
