@@ -40,7 +40,6 @@
     "knex": "^2.0.0",
     "prettier": "^2.6.2",
     "regex-parser": "^2.2.11",
-    "sqlite3": "^5.0.8",
     "tims": "^2.1.0",
     "yargs-parser": "^21.0.1",
     "pg": "latest"
