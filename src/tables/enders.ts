@@ -13,6 +13,7 @@ export default new app.Table<Starter>({
       .unsigned()
       .references("id")
       .inTable("parts")
+      .onDelete("cascade")
       .notNullable()
   },
 })

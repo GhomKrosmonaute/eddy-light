@@ -14,12 +14,14 @@ export default new app.Table<Binding>({
       .unsigned()
       .references("id")
       .inTable("parts")
+      .onDelete("cascade")
       .notNullable()
     table
       .integer("right_id")
       .unsigned()
       .references("id")
       .inTable("parts")
+      .onDelete("cascade")
       .notNullable()
   },
 })
