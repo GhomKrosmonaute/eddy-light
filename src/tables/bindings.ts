@@ -1,8 +1,8 @@
 import * as app from "../app.js"
 
 export interface Binding {
-  part_1: number
-  part_2: number
+  left_id: number
+  right_id: number
 }
 
 export default new app.Table<Binding>({
@@ -10,13 +10,13 @@ export default new app.Table<Binding>({
   description: "Represent the lexical bindings",
   setup: (table) => {
     table
-      .integer("part_1")
+      .integer("left_id")
       .unsigned()
       .references("id")
       .inTable("parts")
       .notNullable()
     table
-      .integer("part_2")
+      .integer("right_id")
       .unsigned()
       .references("id")
       .inTable("parts")

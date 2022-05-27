@@ -12,7 +12,9 @@ const listener: app.Listener<"ready"> = {
   event: "ready",
   description: "Just log that bot is ready",
   once: true,
-  async run() {
+  async run(client) {
+    if (process.env.BOT_LOAD_DATASETS) await app.datasetHandler.load(client)
+
     app.log(
       `Ok i'm ready! ${chalk.blue(
         "My default prefix is"

@@ -8,6 +8,10 @@
 /temp
 /data
 
+# downloadable
+
+/datasets
+
 # node
 
 node_modules

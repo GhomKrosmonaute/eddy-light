@@ -21,11 +21,12 @@ const listener: app.Listener<"messageCreate"> = {
 
     if (message.content.includes("?") || Math.random() < 0.8)
       return message.reply(
-        await app.generateResponse(
-          message.channel.id,
-          message.author.id,
-          message.content
-        )
+        // await app.generateResponse(
+        //   message.channel.id,
+        //   message.author.id,
+        //   message.content
+        // )
+        await app.generateSentence(10, 25)
       )
   },
 }
